@@ -47,6 +47,20 @@
   <![endif]-->
 
   {{ 'option_selection.js' | shopify_asset_url | script_tag }}
+  
+  {% comment %}
+  	Adds Cloudflares modernizr for development but shoudl be switched with
+  	a custom build before pushing to producution. 
+  {% endcomment %}
+  
+  {{ '//cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js' | script_tag }}
+  
+  {% comment %}
+  <!-- Must be compiled and added to your assets
+  		 I am using the modernizr-shopname-v1 convetions
+  		 but feel free to use your own conventions-->
+  {{ 'modernizr-shopname-v1.min.js' | asset_url | script_tag }}
+  {% endcomment %}
 
   {{ '//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js' | script_tag }}
 
